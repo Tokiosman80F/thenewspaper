@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import { Button } from "react-bootstrap"
 import { Link } from "react-router-dom"
 
 
@@ -20,7 +19,7 @@ const LeftContent = () => {
         <h1>All Categories</h1>
         {showData.map((data) => (
           <p key={data.id} className="" >
-            <Link className='text-decoration-none'>{data.name}</Link>
+            <Link to={`/category/${data.id}`} className='text-decoration-none'>{data.name}</Link>
           </p>
         ))}
       </>
