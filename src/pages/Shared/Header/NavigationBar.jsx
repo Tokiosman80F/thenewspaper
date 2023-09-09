@@ -1,4 +1,5 @@
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 
 const NavigationBar = () => {
@@ -8,7 +9,7 @@ const NavigationBar = () => {
         <Navbar.Toggle aria-controls='responsive-navbar-nav' />
         <Navbar.Collapse id='responsive-navbar-nav'>
           <Nav className='mx-auto '>
-            <Nav>Home </Nav>
+            <Nav> <Link to='/category/0'>Home</Link> </Nav>
             <Nav className='mx-3'>About</Nav>
             <Nav>Carrer</Nav>
           </Nav>

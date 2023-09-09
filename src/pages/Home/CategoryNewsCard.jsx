@@ -5,18 +5,13 @@ import Rating from "react-rating";
 import { Link } from "react-router-dom";
 
 const CategoryNewsCard = ({data}) => {
-    const { details, image_url, title, total_view, rating, author } = data;
+    const { _id,details, image_url, title, total_view, rating, author } = data;
     return (
       <>
         <Card className=' mb-3'>
           <Card.Header className='d-flex'>
             {/* author image */}
-            <img
-              src={author.img}
-              alt=''
-              width={50}
-              className='rounded-circle'
-            />
+            <img src={author.img} width={50} className='rounded-circle' />
             <div className='flex-grow-1'>
               {/* author name */}
               <h5>{author.name}</h5>
@@ -34,7 +29,10 @@ const CategoryNewsCard = ({data}) => {
             <Card.Title>{title}</Card.Title>
             {details.length > 250 ? (
               <p>
-                {details.slice(0, 250)}....<Link>ReadMore</Link>
+                {details.slice(0, 250)}....
+                <Link to={`/news/${_id}`}>
+                  ReadMore
+                </Link>
               </p>
             ) : (
               <p>{details}</p>
