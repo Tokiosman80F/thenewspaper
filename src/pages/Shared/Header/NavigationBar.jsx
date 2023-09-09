@@ -9,7 +9,7 @@ const NavigationBar = () => {
         <Navbar.Toggle aria-controls='responsive-navbar-nav' />
         <Navbar.Collapse id='responsive-navbar-nav'>
           <Nav className='mx-auto '>
-            <Nav> <Link to='/category/0'>Home</Link> </Nav>
+             <Link to='/category/0' className="text-decoration-none text-black">Home</Link>
             <Nav className='mx-3'>About</Nav>
             <Nav>Carrer</Nav>
           </Nav>

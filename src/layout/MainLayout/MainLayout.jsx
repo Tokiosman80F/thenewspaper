@@ -3,8 +3,12 @@ import Header from '../../pages/Shared/Header/Header'
 import RightContent from '../../pages/Shared/Contents/RightContent';
 import LeftContent from '../../pages/Shared/Contents/LeftContent';
 import { Outlet } from 'react-router-dom';
+import { useContext } from 'react';
+import { AuthContext } from '../../provider/AuthProvider';
 
 const MainLayout = () => {
+  const user=useContext(AuthContext);
+  console.log(user);
     return (
       <Container>
         <Header></Header>
