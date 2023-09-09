@@ -6,6 +6,7 @@ import NewsDetailCard from "../pages/NewsDetailCard";
 import LoginLayout from "../layout/LoginLayout/LoginLayout";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import Terms from "../pages/Terms";
 
 export const router = createBrowserRouter([
   {
@@ -18,7 +19,12 @@ export const router = createBrowserRouter([
     {
       path:'/register',
       element:<Register></Register>
+    },
+    {
+      path:'/terms',
+      element:<Terms></Terms>
     }
+
   ]
   },
   
