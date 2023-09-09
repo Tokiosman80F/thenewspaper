@@ -1,11 +1,13 @@
 
 import { useContext } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 
 const Login = () => {
     const {loginUser}=useContext(AuthContext)
+    const navigate=useNavigate()
+
     const handleLoginUser=(event)=>{
         event.preventDefault();
         const form=event.target;
@@ -14,9 +16,11 @@ const Login = () => {
         loginUser(email,password)
         .then((userCredential)=>{
             const user=userCredential.user;
-             console.log("successful login =>",user);   
+             console.log("successful login =>",user);
+             navigate('/category/0')   
         })
         .catch((error)=>{console.log(error);})
+
     }
     return (
       <>
