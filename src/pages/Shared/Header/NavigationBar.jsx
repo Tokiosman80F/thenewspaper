@@ -9,7 +9,7 @@ const NavigationBar = () => {
     logoutUser()
       .then(() => console.log("signout successfully"))
       .catch((error) => {
-        console.log("Unsuccessful signout",error.message);
+        console.log("Unsuccessful signout", error.message);
       });
   };
   console.log("The user", user);
@@ -27,18 +27,18 @@ const NavigationBar = () => {
           </Nav>
           <Nav>
             <Nav className='mx-auto'>
-              {user ? <p>{user.email}</p> :<p>No User</p>}
-                  <Button className='bg-secondary border-0 mx-2 '>
-                    <Link
-                      className='text-white text-decoration-none'
-                      onClick={handleSignOut}
-                      to='/login'
-                      >
-                      {user?`LogOut`:`LogIn`}
-                    </Link>
-                  </Button>
-    
-
+              {user ? <p>{user.email}</p> : <p>No User</p>}
+              <Button className='bg-secondary border-0 mx-2 '>
+                {user ? (
+                  <Link
+                    className='text-white text-decoration-none'
+                    onClick={handleSignOut}>
+                    LogOut
+                  </Link>
+                ) : (
+                  <Link className='text-white text-decoration-none' to='/login' >LogIn</Link>
+                )}
+              </Button>
             </Nav>
           </Nav>
         </Navbar.Collapse>

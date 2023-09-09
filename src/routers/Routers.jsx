@@ -7,27 +7,28 @@ import LoginLayout from "../layout/LoginLayout/LoginLayout";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Terms from "../pages/Terms";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
   {
-    path:'/',
-    element:<LoginLayout></LoginLayout>,
-    children:[{
-      path:'/login',
-      element:<Login></Login>,
-    },
-    {
-      path:'/register',
-      element:<Register></Register>
-    },
-    {
-      path:'/terms',
-      element:<Terms></Terms>
-    }
-
-  ]
+    path: "/",
+    element: <LoginLayout></LoginLayout>,
+    children: [
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/register",
+        element: <Register></Register>,
+      },
+      {
+        path: "/terms",
+        element: <Terms></Terms>,
+      },
+    ],
   },
-  
+
   {
     path: "/",
     element: <MainLayout></MainLayout>,
@@ -46,7 +47,11 @@ export const router = createBrowserRouter([
     children: [
       {
         path: ":id",
-        element: <NewsDetailCard></NewsDetailCard>,
+        element: (
+          <PrivateRoute>
+            <NewsDetailCard></NewsDetailCard>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:3000/news/${params.id}`),
       },
