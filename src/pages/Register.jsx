@@ -1,7 +1,13 @@
+import { useState } from 'react';
 import { Button, Form } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 const Register = () => {
+    const [accept,setAccept]=useState(false)
+    const handleCheckbox=(event)=>{
+        console.log(event.target.checked);
+        setAccept(event.target.checked);
+    }
     return (
       <>
         <h2 className='text-center'>Register Here!!</h2>
@@ -45,14 +51,15 @@ const Register = () => {
                   Accept<Link to='/terms'>Term & Condition</Link>
                 </>
               }
+              onChange={handleCheckbox}
             />
           </Form.Group>
 
-          <Button variant='primary' type='submit'>
+          <Button variant='primary' type='submit' disabled={!accept}>
             Register
           </Button>
           <p>
-            Already register? <Link to='/login '>Login now</Link>
+            Already register? <Link to='/login'>Login now</Link>
           </p>
         </Form>
       </>
