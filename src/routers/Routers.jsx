@@ -3,8 +3,25 @@ import MainLayout from "../layout/MainLayout/MainLayout";
 import Category from "../pages/Home/Category";
 import NewsLayout from "../layout/NewsLayout/NewsLayout";
 import NewsDetailCard from "../pages/NewsDetailCard";
+import LoginLayout from "../layout/LoginLayout/LoginLayout";
+import Login from "../pages/Login";
+import Register from "../pages/Register";
 
 export const router = createBrowserRouter([
+  {
+    path:'/',
+    element:<LoginLayout></LoginLayout>,
+    children:[{
+      path:'/login',
+      element:<Login></Login>,
+    },
+    {
+      path:'/register',
+      element:<Register></Register>
+    }
+  ]
+  },
+  
   {
     path: "/",
     element: <MainLayout></MainLayout>,
