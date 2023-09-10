@@ -6,7 +6,7 @@ const LeftContent = () => {
     const [showData,setShowData]=useState([])
     useEffect(()=>{
         const fetchData=async()=>{
-            const response = await fetch(`http://localhost:3000/categories`);
+            const response = await fetch(`http://newspaper-server-4cmkjqvyb-tokiosman0135-gmailcom.vercel.app/categories`);
             const newData=await response.json();
             setShowData(newData)
         }
