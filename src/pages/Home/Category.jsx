@@ -7,7 +7,7 @@ const Category = () => {
     console.log(newsData);
     return (
         <div>
-            this is category:{id}
+       
             {
                 newsData.map((data,id)=><CategoryNewsCard key={id} data={data}></CategoryNewsCard>)
             }

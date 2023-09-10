@@ -18,11 +18,13 @@ const NavigationBar = () => {
       <Container>
         <Navbar.Toggle aria-controls='responsive-navbar-nav' />
         <Navbar.Collapse id='responsive-navbar-nav'>
-          <Nav className='mx-auto '>
+          <Nav className='mx-auto p-5'>
             <Link to='/category/0' className='text-decoration-none text-black'>
               Home
             </Link>
-            <Nav className='mx-3'>About</Nav>
+            <Link to='/About' className='text-decoration-none text-black mx-5'>
+              About
+            </Link>
             <Nav>Carrer</Nav>
           </Nav>
           <Nav>
@@ -36,7 +38,9 @@ const NavigationBar = () => {
                     LogOut
                   </Link>
                 ) : (
-                  <Link className='text-white text-decoration-none' to='/login' >LogIn</Link>
+                  <Link className='text-white text-decoration-none' to='/login'>
+                    LogIn
+                  </Link>
                 )}
               </Button>
             </Nav>
