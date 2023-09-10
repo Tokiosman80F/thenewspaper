@@ -8,6 +8,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Terms from "../pages/Terms";
 import PrivateRoute from "./PrivateRoute";
+import About from "../pages/About";
 
 export const router = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ export const router = createBrowserRouter([
         loader: ({ params }) =>
           fetch(`http://localhost:3000/news/category/${params.id}`),
       },
+      {
+        path:'/About',
+        element:<About></About>
+      }
     ],
   },
   {
